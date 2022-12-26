@@ -6,7 +6,7 @@ class Article(models.Model):
   slug = models.SlugField(max_length=128)
   body = models.TextField()
   date = models.DateTimeField(auto_now_add=True)
-  #thumbnail
+  thumbnail = models.ImageField(default='default.png', blank=True)
   #author
   #word count / char count
 
