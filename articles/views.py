@@ -5,3 +5,6 @@ from .models import Article
 def article_list(req):
   articles = Article.objects.all().order_by('date')
   return render(req, 'articles/article_list.html', {'articles': articles})
+
+def article_detail(req, slug):
+  return render(req, 'articles/article_detail.html')
