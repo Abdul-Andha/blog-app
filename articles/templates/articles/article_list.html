@@ -1,10 +1,22 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Articles</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
   </head>
   <body>
     <h1>Welcome to the articles home page</h1>
     <p>Here you will find all the articles.</p>
+    <div class="articles">
+      {% for article in articles %}
+        <div class="article">
+          <h2><a href="">{{ article.title }}</a></h2>
+          <p>{{ article.snippet }}</p>
+          <p>{{ article.date }}</p>
+        </div>
+      {% endfor %}
+    </div>
   </body>
 </html>
