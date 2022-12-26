@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>This is a specific article page</h1>
-  <p>Here you will find all the articles.</p>
-  <div class="articles">
-    {% for article in articles %}
+  <div class="article-detail">
     <div class="article">
-      <h2><a href="{{ article.slug }}">{{ article.title }}</a></h2>
-      <p>{{ article.snippet }}</p>
+      <h1>{{ article.title }}</h1>
+      <p>{{ article.body }}</p>
       <p>{{ article.date }}</p>
-    {% endfor %}
+    </div>
   </div>
+  
 {% endblock %}
