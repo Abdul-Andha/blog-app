@@ -5,6 +5,11 @@
   <form class="site-form" action="{% url 'accounts:login'%}" method="POST">
     {% csrf_token %}
     {{ form }}
+    
+    {% if next %}
+      <input type="hidden" name="next" value="{{ next }}">
+    {% endif %}
+
     <input type="submit" value="signup">
   </form>
 {% endblock %}

@@ -21,11 +21,19 @@ def login_view(req):
     if form.is_valid(): #log in the user
       user = form.get_user()
       login(req, user)
-      return redirect('articles:list')
+
+      if 'next' in req.POST:
+        return redirect(req.POST.get('next'))        
+      else:
+        return redirect('articles:list')
   else:
     form = AuthenticationForm() 
+
+  next = None
+  if req.GET.get('next'):
+    next = req.GET.get('next')
+  return render(req, 'accounts/login.html', {'form': form, 'next': next})
   
-  return render(req, 'accounts/login.html', {'form': form})
 
 def logout_view(req):
   if req.method == 'POST':
