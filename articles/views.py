@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Article
 from django.contrib.auth.decorators import login_required
+from . import forms
 
 # Create your views here.
 def article_list(req):
@@ -13,4 +14,12 @@ def article_detail(req, slug):
 
 @login_required(login_url='accounts:login')
 def article_create(req):
-  return render(req, 'articles/article_create.html')
+  if req.POST:
+    form = forms.CreateArticle(req.POST, req.FILES)
+    if form.is_valid():
+      #save article to db
+      form.save()
+      return redirect('articles:list')
+  else:
+    form = forms.CreateArticle()
+  return render(req, 'articles/article_create.html', {'form': form})
