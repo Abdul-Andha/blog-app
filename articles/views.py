@@ -18,7 +18,9 @@ def article_create(req):
     form = forms.CreateArticle(req.POST, req.FILES)
     if form.is_valid():
       #save article to db
-      form.save()
+      article = form.save(commit=False)
+      article.author = req.user
+      article.save()
       return redirect('articles:list')
   else:
     form = forms.CreateArticle()
