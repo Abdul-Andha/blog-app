@@ -2,14 +2,14 @@
 
 {% block content %}
   <h1>Welcome to the articles home page</h1>
-  <p>Here you will find all the articles.</p>
   <div class="articles">
     {% for article in articles %}
     <div class="article">
       <h2><a href="{% url 'articles:detail' slug=article.slug%}">{{ article.title }}</a></h2>
       <p>{{ article.snippet }}</p>
       <p>{{ article.date }}</p>
-      <p>{{ article.author }}</p>
+      <p class="author">Added by {{ article.author.username }}</p>
+    </div>
     {% endfor %}
   </div>
 {% endblock %}
