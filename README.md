@@ -5,7 +5,7 @@
 The Daily Scoop is built using Django. Users are able to sign up, login, and add their own blogs to the site. They can also view and read others' blogs on the site.
 ### App Demo
 
-<img src="assets/demo.gif" width=200><br>
+<img src="assets/demo.gif" width=600><br>
 
 ### Features
 
