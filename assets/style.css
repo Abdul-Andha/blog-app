@@ -25,13 +25,13 @@ a, a:hover, a:visited{
 
 div.wrapper h1 {
   text-align: center;
-  margin: 100px auto;
+  margin: 30px auto;
   font-size: 2.4em;
 }
 
 header {
   display: grid;
-  grid-template-column: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   padding: 20px 0;
 }
 
@@ -48,7 +48,9 @@ nav button{
   background: none;
   cursor: pointer;
   font-size: 1em;
-  border: 0px
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 4px;
 }
 
 .articles {
@@ -65,7 +67,7 @@ nav button{
 }
 
 .article h2 {
-  font-size: -webkit-xxx-large1.2em
+  font-size: 1.2em
 }
 
 .article .author {
@@ -82,7 +84,7 @@ nav button{
 }
 
 .article-detail .article img {
-  max-width: 100%
+  width: 100%
 }
 
 .article-detail .article h2 {
