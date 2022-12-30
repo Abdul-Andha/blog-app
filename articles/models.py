@@ -16,3 +16,9 @@ class Article(models.Model):
 
   def snippet(self):
     return self.body[:100] + "..."
+
+  def readingTime(self):
+    time = int(self.wordCount / 238 * 60)
+    minutes = time // 60
+    seconds = time % 60
+    return f"{minutes} min {seconds} sec"
