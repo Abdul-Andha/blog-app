@@ -9,10 +9,10 @@ class Article(models.Model):
   date = models.DateTimeField(auto_now_add=True)
   thumbnail = models.ImageField(default='default.png', blank=True)
   author = models.ForeignKey(User, default=None, on_delete=models.SET_DEFAULT)
-  #word count / char count
+  wordCount = models.IntegerField(default=0)
 
   def __str__(self):
     return self.title
 
   def snippet(self):
-    return self.body[:50] + "..."
+    return self.body[:100] + "..."
