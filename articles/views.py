@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .models import Article
 from django.contrib.auth.decorators import login_required
 from . import forms
-
 # Create your views here.
 def article_list(req):
   articles = Article.objects.all().order_by('date')
@@ -20,6 +19,9 @@ def article_create(req):
       #save article to db
       article = form.save(commit=False)
       article.author = req.user
+      
+      wordCount = len(article.body.split())
+      article.wordCount = wordCount
       article.save()
       return redirect('articles:list')
   else:
