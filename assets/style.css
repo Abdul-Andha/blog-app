@@ -1,7 +1,7 @@
 body{
-  background-color: #fbf0c2;
+  background-color: #0f0f0f;
   background-repeat: no-repeat;
-  color: rgb(0, 0, 0);
+  color: rgb(208, 208, 208);
 }
 
 body *{
@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5{
 }
 
 a, a:hover, a:visited{
-  color: rgb(0, 0, 0);
+  color: purple;
   text-decoration: none;
 }
 
@@ -37,6 +37,7 @@ header {
 
 nav {
   justify-self: end;
+  color: purple;
 }
 
 nav li {
@@ -46,6 +47,7 @@ nav li {
 
 nav button{
   background: none;
+  color: purple;
   cursor: pointer;
   font-size: 1em;
   border: 1px solid;
@@ -70,13 +72,21 @@ nav button{
   font-size: 1.2em
 }
 
+.article .date {
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+}
+
 .article .author {
   padding: 10px;
   position: absolute;
   right: 0;
   bottom: 0;
   margin: 0;
-  
+  color: purple;
 }
 
 .article-detail .article {
